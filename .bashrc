@@ -137,7 +137,7 @@ alias ggpom='git pull origin master'
 alias nsl='dig'
 alias k='kubectl'
 alias p='pulumi'
-alias weather='curl http://wttr.in'
+alias weather='curl http://wttr.in/slc'
 alias bashrcupdate='cp /mnt/c/users/cnorling/git/dotfiles/.bashrc ~/.bashrc'
 
 # docker alises
