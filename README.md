@@ -1,3 +1,3 @@
 # dotfiles
 
-collection of dotfiles for personal use
+a collection of dotfiles for personal use
