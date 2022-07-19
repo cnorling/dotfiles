@@ -147,3 +147,6 @@ alias dogger='docker'
 alias cuddle='kubectl'
 alias canine='k9s'
 alias tf='terraform'
+
+# initialize the git prompt
+. mnt/c/users/cnorling/git/dotfiles/.git-prompt.sh
