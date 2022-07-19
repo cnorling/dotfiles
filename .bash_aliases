@@ -22,6 +22,7 @@ alias bashrcupdate='cp /mnt/c/users/cnorling/git/dotfiles/.bashrc ~/.bashrc'
 alias zshrcupdate='cp /mnt/c/users/cnorling/git/dotfiles/.zshrc ~/.zshrc'
 alias aliasupdate='cp /mnt/c/users/cnorling/git/dotfiles/.bash_aliases ~/.bash_aliases'
 alias dotfilesupdate='bashrcupdate; zshrcupdate; aliasupdate'
+alias dfu='dotfilesupdate'
 
 # docker alises
 alias dicker='docker'
