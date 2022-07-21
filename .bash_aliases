@@ -32,3 +32,5 @@ ln -fs ~/git/dotfiles/.bashrc ~/.bashrc
 ln -fs ~/git/dotfiles/.zshrc ~/.zshrc
 ln -fs ~/git/dotfiles/.bash_aliases ~/.bash_aliases
 ln -fs ~/git/dotfiles/.p10k.zsh ~/.p10k.zsh
+
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
