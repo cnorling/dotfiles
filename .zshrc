@@ -121,3 +121,6 @@ source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -f ~/.sharedrc.sh ]; then
     . ~/.sharedrc.sh
 fi
+
+# bind tab to autoaccept suggestions
+bindkey '^I' autosuggest-accept
