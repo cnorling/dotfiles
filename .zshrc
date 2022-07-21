@@ -72,8 +72,6 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git aws)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -114,3 +112,7 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source $ZSH/oh-my-zsh.sh
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
