@@ -34,3 +34,20 @@ ln -fs ~/git/dotfiles/.bash_aliases ~/.bash_aliases
 ln -fs ~/git/dotfiles/.p10k.zsh ~/.p10k.zsh
 
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+
+function maintain {
+    # check if there's a valid vscode workspace
+    if ! [ -f "~/git/$1.code-workspace" ]
+        then echo "$1.code workspace is missing, replacing"
+        echo \{\"folders\"\:\ \[\{\"path\"\:\ \"/home/cnorling/git/$1\"\}\]\} | jq . > "~/git/$1.code-workspace"
+    fi
+    # check if repo already exists
+    if ! [ -d "~/git/$1/.git" ]
+        then echo "$1 git repo is missing, checking if there's a valid url"
+        if [ $2 =~ ^git@github\.com:(.)*\.git$ ]
+            then git clone $2 "~/git/$1"
+        fi
+    fi
+    # open the repo
+    code "~/git/$1.code-workspace"
+}
