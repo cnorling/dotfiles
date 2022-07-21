@@ -37,17 +37,17 @@ export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
 function maintain {
     # check if there's a valid vscode workspace
-    if ! [ -f "$home/git/$1.code-workspace" ]
+    if ! [ -f "$HOME/git/$1.code-workspace" ]
         then echo "$1.code-workspace is missing, replacing"
-        echo \{\"folders\"\:\ \[\{\"path\"\:\ \"$home/git/$1\"\}\]\} | jq . > "$home/git/$1.code-workspace"
+        echo \{\"folders\"\:\ \[\{\"path\"\:\ \"$HOME/git/$1\"\}\]\} | jq . > "$HOME/git/$1.code-workspace"
     fi
     # check if repo already exists
-    if ! [ -d "$home/git/$1/.git" ]
+    if ! [ -d "$HOME/git/$1/.git" ]
         then echo "$1 git repo is missing, checking if there's a valid url"
         if [[ $2 =~ ^git@github\.com:(.)*\.git$ ]]
-            then git clone $2 "$home/git/$1"
+            then git clone $2 "$HOME/git/$1"
         fi
     fi
     # open the repo
-    code "$home/git/$1.code-workspace"
+    code "$HOME/git/$1.code-workspace"
 }
