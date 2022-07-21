@@ -1,3 +1,7 @@
+#------------------------
+#PERSONAL STUFF GOES HERE
+#------------------------
+
 # add git aliases
 alias ggs='git status'
 alias ggf='git fetch'
