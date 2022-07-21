@@ -115,3 +115,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#------------------------
+#PERSONAL STUFF GOES HERE
+#------------------------
+
+# add .sharedrc.sh
+if [ -f ~/.sharedrc.sh ]; then
+    . ~/.sharedrc.sh
+fi

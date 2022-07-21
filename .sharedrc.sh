@@ -31,13 +31,15 @@ alias tf='terraform'
 alias ls='ls --color=auto -1'
 
 # add a symlink to zshrc, bashrc, and bash_aliases
-ln -fs ~/git/dotfiles/.bashrc ~/.bashrc
-ln -fs ~/git/dotfiles/.zshrc ~/.zshrc
-ln -fs ~/git/dotfiles/.bash_aliases ~/.bash_aliases
-ln -fs ~/git/dotfiles/.p10k.zsh ~/.p10k.zsh
+foreach dotfile ( .bashrc .zshrc .sharedrc.sh .p10k.zsh )
+ln -fs ~/git/dotfiles/$dotfile ~/$dotfile
+end
 
+# add brew to path
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
+# this function is used to open vscode in windows from linux.
+# it also creates workspaces and initializes github repos how I like them.
 function maintain {
     # check if there's a valid vscode workspace
     if ! [ -f "$HOME/git/$1.code-workspace" ]

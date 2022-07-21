@@ -106,13 +106,18 @@ plugins=(git aws)
 # # PROMPT='${vcs_info_msg_0_}%# '
 # zstyle ':vcs_info:git:*' formats '%b'
 
- if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#------------------------
+#PERSONAL STUFF GOES HERE
+#------------------------
+
+# add sharedrc functions
+if [ -f ~/.sharedrc.sh ]; then
+    . ~/.sharedrc.sh
+fi
