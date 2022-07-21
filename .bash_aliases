@@ -45,7 +45,8 @@ function maintain {
     if ! [ -d "$HOME/git/$1/.git" ]
         then echo "$1 git repo is missing, checking if there's a valid url"
         if [[ $2 =~ ^git@github\.com:(.)*\.git$ ]]
-            then git clone $2 "$HOME/git/$1"
+            then echo "url is valid, cloning repo" 
+            git clone $2 "$HOME/git/$1"
         fi
     fi
     # open the repo
