@@ -124,3 +124,6 @@ fi
 
 # bind tab to autoaccept suggestions
 bindkey '^I' autosuggest-accept
+
+# bind escape to clear the whole line like windows
+bindkey '\e' kill-whole-line
