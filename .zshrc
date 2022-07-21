@@ -114,6 +114,3 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:"/mnt/c/Windows/System32/OpenSSH/":/mnt/c/Users/cnorling/AppData/Local/Programs/Microsoft\ VS\ Code/bin'
-export PATH=$PATH:"/mnt/c/Users/cnorling/AppData/Local/Programs/Microsoft VS Code/bin" 

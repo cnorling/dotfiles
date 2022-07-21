@@ -3,7 +3,7 @@ alias ggs='git status'
 alias ggf='git fetch'
 alias ggb='git branch'
 alias gga='git add'
-alias ggaa='git add *'
+alias ggaa='git add --all'
 alias ggc='git commit -m'
 alias ggca='git commit --amend --no-edit'
 alias ggck='git checkout'
@@ -31,3 +31,8 @@ alias dogger='docker'
 alias cuddle='kubectl'
 alias canine='k9s'
 alias tf='terraform'
+
+# add a symlink to zshrc, bashrc, and bash_aliases
+ln -fs ~/git/dotfiles/.bashrc ~/.bashrc
+ln -fs ~/git/dotfiles/.zshrc ~/.zshrc
+ln -fs ~/git/dotfiles/.bash_aliases ~/.bash_aliases
