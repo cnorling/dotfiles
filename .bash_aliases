@@ -27,6 +27,9 @@ alias cuddle='kubectl'
 alias canine='k9s'
 alias tf='terraform'
 
+# set ls to single line by default
+alias ls='ls --color=auto -1'
+
 # add a symlink to zshrc, bashrc, and bash_aliases
 ln -fs ~/git/dotfiles/.bashrc ~/.bashrc
 ln -fs ~/git/dotfiles/.zshrc ~/.zshrc
