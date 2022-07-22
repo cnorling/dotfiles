@@ -2,13 +2,13 @@
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/setup.sh)"
 
 # check if root github folder is there
-if ! [ -d /home/git ]
+if ! [ -d ~/git ]
     then echo "root git folder is missing, creating"
-    mkdir /home/git
+    mkdir ~/git
 fi
 
 # check if dotfiles repository is cloned
-if ! [ -d /home/git/dotfiles ]
+if ! [ -d ~/git/dotfiles ]
     then echo "dotfiles repository is missing, creating"
     git clone git@github.com:salineselin/dotfiles.git /home/git/dotfiles
 fi
@@ -45,7 +45,7 @@ done
 # install oh-my-zsh
 if ! [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]
     then echo "oh-my-zsh is missing, installing"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
 # install zsh autosuggestions 
