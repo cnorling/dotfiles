@@ -39,6 +39,7 @@ do
     if ! [ -f /home/linuxbrew/.linuxbrew/bin/${installer} ]
         then echo "${installer} is missing, installing"
         brew install ${installer} --quiet
+    fi
 done
 
 # install oh-my-zsh
