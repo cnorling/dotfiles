@@ -37,8 +37,6 @@ if ! [ -d ~/.oh-my-zsh/zsh-syntax-highlighting ]
 fi
 
 # install powerlevel10k
-# maybe run this command after if you're setting up for the first time
-# echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 if ! [ -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]
     then git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 fi
