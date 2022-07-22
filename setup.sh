@@ -4,7 +4,11 @@
 # install brew then add it to PATH until .sharedrc.sh can do it
 if ! [ -d /home/linuxbrew/.linuxbrew/bin ]
     then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+fi
+
+# if brew isn't in PATH, add it
+if ! [ -d (echo -e ${PATH//:/\\n} | grep /home/linuxbrew/.linuxbrew/bin) ]
+    then export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 fi
 
 # install jq
