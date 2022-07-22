@@ -35,9 +35,16 @@ alias tf='terraform'
 alias ls='ls --color=auto -1'
 
 # add a symlink to zshrc, bashrc, and bash_aliases
-foreach dotfile ( .bashrc .zshrc .sharedrc.sh .p10k.zsh )
-ln -fs ~/git/dotfiles/$dotfile ~/$dotfile
-end
+dotfiles=(
+    .bashrc
+    .zshrc
+    .sharedrc.sh
+    .p10k.zsh
+)
+for dotfile in ${dotfiles[@]}
+do
+    ln -fs ~/git/dotfiles/$dotfile ~/$dotfile
+done
 
 # add brew to path
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
