@@ -55,3 +55,8 @@ fi
 if ! [ -f /home/linuxbrew/.linuxbrew/bin/tfenv ]
     then brew install tfenv
 fi
+
+# install terraform-docs
+if ! [ -f /home/linuxbrew/.linuxbrew/bin/terraform-docs ]
+    then brew install terraform-docs
+fi
