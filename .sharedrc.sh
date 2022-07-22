@@ -29,7 +29,6 @@ alias dicker='docker'
 alias digger='docker'
 alias dogger='docker'
 alias cuddle='kubectl'
-alias canine='k9s'
 alias tf='terraform'
 
 # set ls to single line by default
