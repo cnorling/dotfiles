@@ -10,17 +10,25 @@ fi
 # always add brew to path, it cant hurt
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
-# install jq
-if ! [ -f /home/linuxbrew/.linuxbrew/bin/jq ]
-    then echo "jq is missing, installing"
-    brew install jq
-fi
 
-# install zsh
-if ! [ -f /home/linuxbrew/.linuxbrew/bin/zsh ]
-    then echo "zsh is missing, installing"
-    brew install zsh
-fi
+#---------------------------
+# BREW BASED INSTALLERS LOOP
+#---------------------------
+
+brewinstallers=(
+    jq
+    zsh
+    tfenv
+    terraform-docs
+    lefthook
+)
+for installer in ${brewinstallers[@]}
+do
+    # check if binary exists and install if its missing
+    if ! [ -f /home/linuxbrew/.linuxbrew/bin/${installer} ]
+        then echo "${installer} is missing, installing"
+        brew install ${installer} --quiet
+done
 
 # install oh-my-zsh
 if ! [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]
@@ -32,7 +40,7 @@ fi
 # source: https://dev.to/pratik_kale/customise-your-terminal-using-zsh-powerlevel10k-1og5
 if ! [ -d ~/.oh-my-zsh/zsh-autosuggestions ]
     then echo "zsh-autosuggestions is missing, installing"
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/zsh-autosuggestions
 fi
 
 # install zsh syntax highlighting
@@ -58,18 +66,6 @@ fi
 if ! [ -f /usr/bin/podman ]
     then "podman is missing, installing"
     sudo apt-get install podman
-fi
-
-# install tfenv
-if ! [ -f /home/linuxbrew/.linuxbrew/bin/tfenv ]
-    then "tfenv is missing, installing"
-    brew install tfenv
-fi
-
-# install terraform-docs
-if ! [ -f /home/linuxbrew/.linuxbrew/bin/terraform-docs ]
-    then "terraform-docs is missing, installing"
-    brew install terraform-docs
 fi
 
 echo "profile is all setup!"
