@@ -45,3 +45,6 @@ fi
 if ! [ -f ~/.sharedrc.sh ]
     then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/.sharedrc.sh)"
 fi
+
+# install podman
+# install tfenv
