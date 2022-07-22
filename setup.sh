@@ -1,3 +1,6 @@
+# this commented out script allows you to initialize this anywhere with github access
+# /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/setup.sh)"
+
 # install brew then add it to PATH until .sharedrc.sh can do it
 if ! [ -d $HOME/linuxbrew/.linuxbrew/bin ]
     then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
