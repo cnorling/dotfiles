@@ -1,6 +1,18 @@
 # this commented out script allows you to initialize this anywhere with github access
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/setup.sh)"
 
+# check if root github folder is there
+if ! [ -d /home/git ]
+    then echo "root git folder is missing, creating"
+    mkdir /home/git
+fi
+
+# check if dotfiles repository is cloned
+if ! [ -d /home/git/dotfiles ]
+    then echo "dotfiles repository is missing, creating"
+    git clone git@github.com:salineselin/dotfiles.git /home/git/dotfiles
+fi
+
 # install brew then add it to PATH until .sharedrc.sh can do it
 if ! [ -d /home/linuxbrew/.linuxbrew/bin ]
     then echo "brew is missing, installing" 
