@@ -47,4 +47,11 @@ if ! [ -f ~/.sharedrc.sh ]
 fi
 
 # install podman
+if ! [ -f /usr/bin/podman ]
+    then sudo apt-get install podman
+fi
+
 # install tfenv
+if ! [ -f /home/linuxbrew/.linuxbrew/bin/tfenv ]
+    then brew install tfenv
+fi
