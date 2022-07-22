@@ -1,5 +1,5 @@
 # this commented out script allows you to initialize this anywhere with github access
-# /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/setup.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/setup.sh)"
 
 # install brew then add it to PATH until .sharedrc.sh can do it
 if ! [ -d /home/linuxbrew/.linuxbrew/bin ]
@@ -19,7 +19,7 @@ fi
 
 # install oh-my-zsh
 if ! [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]
-    then /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 # install zsh autosuggestions 
@@ -43,5 +43,5 @@ fi
 
 # run sharedrc.sh for init
 if ! [ -f ~/.sharedrc.sh ]
-    then /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/.sharedrc.sh)"
+    then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/.sharedrc.sh)"
 fi
