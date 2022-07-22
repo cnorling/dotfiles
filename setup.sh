@@ -6,10 +6,8 @@ if ! [ -d /home/linuxbrew/.linuxbrew/bin ]
     then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# if brew isn't in PATH, add it
-if ! [ -d (echo -e ${PATH//:/\\n} | grep /home/linuxbrew/.linuxbrew/bin) ]
-    then export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-fi
+# always add brew to path, it cant hurt
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
 # install jq
 if ! [ -f /home/linuxbrew/.linuxbrew/bin/jq ]
