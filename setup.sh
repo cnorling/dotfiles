@@ -2,23 +2,23 @@
 # /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/setup.sh)"
 
 # install brew then add it to PATH until .sharedrc.sh can do it
-if ! [ -d home/linuxbrew/.linuxbrew/bin ]
+if ! [ -d /home/linuxbrew/.linuxbrew/bin ]
     then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 fi
 
 # install jq
-if ! [ -f home/linuxbrew/.linuxbrew/bin/jq ]
+if ! [ -f /home/linuxbrew/.linuxbrew/bin/jq ]
     then brew install jq
 fi
 
 # install zsh
-if ! [ -f home/linuxbrew/.linuxbrew/bin/zsh ]
+if ! [ -f /home/linuxbrew/.linuxbrew/bin/zsh ]
     then brew install zsh
 fi
 
 # install oh-my-zsh
-if ! [ -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]
+if ! [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]
     then /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
