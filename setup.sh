@@ -22,7 +22,6 @@ fi
 # always add brew to path, it cant hurt
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
-
 #---------------------------
 # BREW BASED INSTALLERS LOOP
 #---------------------------
