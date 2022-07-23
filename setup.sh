@@ -10,7 +10,7 @@ fi
 # check if dotfiles repository is cloned
 if ! [ -d ~/git/dotfiles ]
     then echo "dotfiles repository is missing, creating"
-    git clone git@github.com:salineselin/dotfiles.git /home/git/dotfiles
+    git clone git@github.com:salineselin/dotfiles.git ~/git/dotfiles
 fi
 
 # install brew then add it to PATH until .sharedrc.sh can do it
@@ -32,6 +32,7 @@ brewinstallers=(
     tfenv
     terraform-docs
     lefthook
+    podman
 )
 for installer in ${brewinstallers[@]}
 do
@@ -74,10 +75,4 @@ if ! [ -f ~/.sharedrc.sh ]
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/.sharedrc.sh)"
 fi
 
-# install podman
-if ! [ -f /usr/bin/podman ]
-    then "podman is missing, installing"
-    sudo apt-get install podman
-fi
-
-echo "profile is all setup!"
+echo "profile is all setup, just run chsh"
