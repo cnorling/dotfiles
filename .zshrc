@@ -122,7 +122,7 @@ if [ -f ~/.sharedrc.sh ]; then
     . ~/.sharedrc.sh
 fi
 
-# bind tab to autoaccept suggestions
+# bind double tab to autoaccept suggestions
 bindkey '^I^I' autosuggest-accept
 
 # bind escape to clear the whole line like windows
