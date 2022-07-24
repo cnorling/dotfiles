@@ -40,6 +40,8 @@ dotfiles=(
     .zshrc
     .sharedrc.sh
     .p10k.zsh
+    .tmux.conf
+    .vimrc
 )
 for dotfile in ${dotfiles[@]}
 do
