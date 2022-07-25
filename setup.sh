@@ -27,6 +27,7 @@ brewinstallers=(
     terraform-docs
     lefthook
     podman
+    neovim
 )
 for installer in ${brewinstallers[@]}
 do
