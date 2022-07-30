@@ -130,4 +130,4 @@ bindkey '\e' kill-whole-line
 
 # start ssh agent
 eval `ssh-agent -s` > /dev/null
-ssh-add /mnt/c/users/selin/.ssh/id_ed25519 > /dev/null
+ssh-add -q ~/.ssh/id_ed25519
