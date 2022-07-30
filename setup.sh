@@ -28,6 +28,8 @@ brewinstallers=(
     lefthook
     podman
     neovim
+    google-cloud-sdk
+    doctl
 )
 for installer in ${brewinstallers[@]}
 do
