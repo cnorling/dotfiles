@@ -21,6 +21,7 @@ alias ggpom='git pull origin master'
 alias nsl='dig'
 alias k='kubectl'
 alias p='pulumi'
+alias cls='clear'
 alias weather='curl http://wttr.in/slc'
 
 # docker alises
