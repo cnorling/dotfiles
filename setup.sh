@@ -33,6 +33,7 @@ brewinstallers=(
     neovim
     google-cloud-sdk
     doctl
+    kubectl
 )
 for installer in ${brewinstallers[@]}
 do
