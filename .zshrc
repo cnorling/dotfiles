@@ -137,3 +137,6 @@ if [ -f '/home/cnorling/.gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/home/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/cnorling/.gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cnorling/.gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+
+# start minikube
+# minikube start --driver=podman --container-runtime=cri-o
