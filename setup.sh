@@ -34,6 +34,7 @@ brewinstallers=(
     google-cloud-sdk
     doctl
     kubectl
+    helm
 )
 for installer in ${brewinstallers[@]}
 do
