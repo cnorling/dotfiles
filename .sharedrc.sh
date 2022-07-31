@@ -72,6 +72,10 @@ function maintain {
     code "$HOME/git/$1.code-workspace"
 }
 
+function showpath {
+    echo "${PATH//:/$'\n'}"
+}
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/cnorling/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cnorling/google-cloud-sdk/path.zsh.inc'; fi
 
