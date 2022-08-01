@@ -140,6 +140,3 @@ if [ -f '/home/cnorling/.gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '
 
 # start minikube
 # minikube start --driver=podman --container-runtime=cri-o
-
-# set kube editor to vscode
-export KUBE_EDITOR="code -w"

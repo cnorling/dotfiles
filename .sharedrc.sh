@@ -35,6 +35,9 @@ alias tf='terraform'
 # set ls to single line by default
 alias ls='ls --color=auto -1'
 
+# set kube editor to vscode
+export KUBE_EDITOR="code -w"
+
 # add a symlink to zshrc, bashrc, and bash_aliases
 dotfiles=(
     .bashrc
@@ -81,3 +84,8 @@ if [ -f '/home/cnorling/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cnorling
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/cnorling/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cnorling/google-cloud-sdk/completion.zsh.inc'; fi
+
+# perform local only operations
+if [ -f '/home/cnorling/.envrc' ]
+    then . '/home/cnorling/.envrc'
+fi
