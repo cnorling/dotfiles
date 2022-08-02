@@ -25,7 +25,7 @@ alias cls='clear'
 alias weather='curl http://wttr.in/slc'
 
 # docker alises
-alias docker='podman'
+# alias docker='podman'
 alias dicker='docker'
 alias digger='docker'
 alias dogger='docker'
