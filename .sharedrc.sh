@@ -79,6 +79,31 @@ function showpath {
     echo "${PATH//:/$'\n'}"
 }
 
+function bgdc {
+    echo '
+,-\__\
+|f-"Y\|
+\()7L/
+ cgD                             __ _
+ |\(        _______________    .'  Y '>,
+  \ \     /                 \ / _   _   \
+   \\\   | BE GAY DO CRIMES | )(_) (_)(|}
+    \\\   \_______________  / {  4A   } /
+     \\\                  \|  \uLuJJ/\l
+      \\\                     |3    p)/
+       \\\___ __________      /nnm_n//
+       c7___-__,__-)\,__)(".  \_>-<_/D
+                     \_"-._.__G G_c__.-__<"/ ( \
+                         <"-._>__-,G_.___)\   \7\
+                        ("-.__.| \"<.__.-" )   \ \
+                        |"-.__"\  |"-.__.-".\   \ \
+                        ("-.__"". \"-.__.-".|    \_\
+                        \"-.__""|!|"-.__.-".)     \ \
+                         "-.__""\_|"-.__.-"./      \ l
+                          ".__""">G>-.__.-">       .--,_
+    '
+}
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/cnorling/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cnorling/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -89,3 +114,5 @@ if [ -f '/home/cnorling/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cn
 if [ -f '/home/cnorling/.envrc' ]
     then . '/home/cnorling/.envrc'
 fi
+
+bgdc
