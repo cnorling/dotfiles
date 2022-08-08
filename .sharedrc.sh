@@ -76,7 +76,7 @@ function maintain {
 }
 
 function maintains {
-    ls -d */ | sed 's/\///g'
+    ls -d ~/git/*/ | sed 's/\/home\/cnorling\/git\///g' | sed 's/\///g'
 }
 
 function showpath {
