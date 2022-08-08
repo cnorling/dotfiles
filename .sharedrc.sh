@@ -75,6 +75,10 @@ function maintain {
     code "$HOME/git/$1.code-workspace"
 }
 
+function maintains {
+    ls -d */ | sed 's/\///g'
+}
+
 function showpath {
     echo "${PATH//:/$'\n'}"
 }
