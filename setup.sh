@@ -35,6 +35,7 @@ brewinstallers=(
     doctl
     kubectl
     helm
+    gitversion
 )
 for installer in ${brewinstallers[@]}
 do
