@@ -38,6 +38,11 @@ alias ls='ls --color=auto -1'
 # set kube editor to vscode
 export KUBE_EDITOR="code -w"
 
+# alias tfenv
+alias tfversion='tfenv'
+alias tfver='tfenv'
+alias tfv='tfenv'
+
 # add a symlink to zshrc, bashrc, and bash_aliases
 dotfiles=(
     .bashrc
