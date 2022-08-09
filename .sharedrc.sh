@@ -14,6 +14,7 @@ alias ggck='git checkout'
 alias ggst='git stash'
 alias ggstp='git stash pop'
 alias ggp='git push'
+alias ggpl='git pull'
 alias ggpf='git push --force-with-lease'
 alias ggpom='git pull origin master'
 
