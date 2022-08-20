@@ -128,6 +128,9 @@ bindkey '^I^I' autosuggest-accept
 # bind escape to clear the whole line like windows
 bindkey '\e' kill-whole-line
 
+# enables vim mode
+bindkey -v
+
 # start ssh agent
 eval `ssh-agent -s` > /dev/null
 ssh-add -q ~/.ssh/id_ed25519
