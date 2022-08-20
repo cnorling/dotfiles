@@ -58,8 +58,15 @@ do
     ln -fs ~/git/dotfiles/$dotfile ~/$dotfile
 done
 
-# add brew to path
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+# add extra user paths
+additionalPaths=(
+    /usr/local/texlive/2022/bin/x86_64-linux
+    /home/linuxbrew/.linuxbrew/bin
+)
+for additionalPath in ${additionalPaths[@]}
+do
+    export PATH="$PATH:$additionalPath"
+done
 
 # this function is used to open vscode in windows from linux.
 # it also creates workspaces and initializes github repos how I like them.
