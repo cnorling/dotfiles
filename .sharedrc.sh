@@ -88,10 +88,24 @@ function maintain {
     code "$HOME/git/$1.code-workspace"
 }
 
+# this function just lists repos I have cloned down
 function maintains {
     ls -d ~/git/*/ | sed 's/\/home\/cnorling\/git\///g' | sed 's/\///g'
 }
 
+# this function removes repos I've cloned down and initialized
+function unmaintain {
+    if [ -f "$HOME/git/$1.code-workspace" ]
+        then echo "$1.code-workspace exists, removing"
+        rm -f "$HOME/git/$1.code-workspace"
+    fi
+    if [ -d "$HOME/git/$1" ]
+        then echo "$1 git directory exists, removing"
+        rm -fd "$HOME/git/$1"
+    fi
+}
+
+# this function just prints my whole path in an easier to read format
 function showpath {
     echo "${PATH//:/$'\n'}"
 }
