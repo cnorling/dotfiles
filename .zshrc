@@ -125,9 +125,6 @@ fi
 # bind double tab to autoaccept suggestions
 bindkey '^I^I' autosuggest-accept
 
-# bind escape to clear the whole line like windows
-bindkey '\e' kill-whole-line
-
 # enables vim mode
 bindkey -v
 
