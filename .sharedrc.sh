@@ -74,7 +74,8 @@ function maintain {
     # check if there's a valid vscode workspace
     if ! [ -f "$HOME/git/$1.code-workspace" ]
         then echo "$1.code-workspace is missing, replacing"
-        echo '{"folders": [{"path": "$HOME/git/$1"}]}' | envsubst | jq
+        FOLDER=$1
+        echo '{"folders": [{"path": "$HOME/git/$FOLDER"}]}' | envsubst | jq > "$HOME/git/$1.code-workspace"
     fi
     # check if repo already exists
     if ! [ -d "$HOME/git/$1/.git" ]
