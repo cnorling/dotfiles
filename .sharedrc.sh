@@ -23,8 +23,7 @@ alias nsl='dig'
 alias k='kubectl'
 alias p='pulumi'
 alias cls='clear'
-alias weather='curl http://wttr.in/slc'
-
+alias weather='curl http://v2.wttr.in/slc'
 # docker alises
 # alias docker='podman'
 alias dicker='docker'
