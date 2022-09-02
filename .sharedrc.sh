@@ -103,7 +103,7 @@ function unmaintain {
     fi
     if [ -d "$HOME/git/$1" ]
         then echo "$1 git directory exists, removing"
-        rm -fd "$HOME/git/$1"
+        rm -rfd "$HOME/git/$1"
     fi
 }
 
