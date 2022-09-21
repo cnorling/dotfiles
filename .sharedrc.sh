@@ -25,13 +25,16 @@ alias k='kubectl'
 alias p='pulumi'
 alias cls='clear'
 alias weather='curl http://v2.wttr.in/slc'
+
 # docker alises
-# alias docker='podman'
 alias dicker='docker'
 alias digger='docker'
 alias dogger='docker'
 alias cuddle='kubectl'
 alias tf='terraform'
+
+# bind clip to widnows in wsl
+alias clip='clip.exe'
 
 # set ls to single line by default
 alias ls='ls --color=auto -1'
@@ -53,8 +56,7 @@ dotfiles=(
     .tmux.conf
     .vimrc
 )
-for dotfile in ${dotfiles[@]}
-do
+for dotfile in ${dotfiles[@]}; do
     ln -fs ~/git/dotfiles/$dotfile ~/$dotfile
 done
 
@@ -63,8 +65,7 @@ additionalPaths=(
     /usr/local/texlive/2022/bin/x86_64-linux
     /home/linuxbrew/.linuxbrew/bin
 )
-for additionalPath in ${additionalPaths[@]}
-do
+for additionalPath in ${additionalPaths[@]}; do
     export PATH="$PATH:$additionalPath"
 done
 
@@ -72,18 +73,18 @@ done
 # it also creates workspaces and initializes github repos how I like them.
 function maintain {
     # check if there's a valid vscode workspace
-    if ! [ -f "$HOME/git/$1.code-workspace" ]
-        then echo "$1.code-workspace is missing, replacing"
+    if ! [ -f "$HOME/git/$1.code-workspace" ]; then
+        echo "$1.code-workspace is missing, replacing"
         A='{"folders": [{"path": "'
         B="$HOME/git/$1"
         C='"}]}'
-        echo $A$B$C | jq > "$HOME/git/$1.code-workspace"
+        echo $A$B$C | jq >"$HOME/git/$1.code-workspace"
     fi
     # check if repo already exists
-    if ! [ -d "$HOME/git/$1/.git" ]
-        then echo "$1 git repo is missing, checking if there's a valid url"
-        if [[ $2 =~ ^git@github\.com:(.)*\.git$ ]]
-            then echo "url is valid, cloning repo" 
+    if ! [ -d "$HOME/git/$1/.git" ]; then
+        echo "$1 git repo is missing, checking if there's a valid url"
+        if [[ $2 =~ ^git@github\.com:(.)*\.git$ ]]; then
+            echo "url is valid, cloning repo"
             git clone $2 "$HOME/git/$1"
         fi
     fi
@@ -98,12 +99,12 @@ function maintains {
 
 # this function removes repos I've cloned down and initialized
 function unmaintain {
-    if [ -f "$HOME/git/$1.code-workspace" ]
-        then echo "$1.code-workspace exists, removing"
+    if [ -f "$HOME/git/$1.code-workspace" ]; then
+        echo "$1.code-workspace exists, removing"
         rm -f "$HOME/git/$1.code-workspace"
     fi
-    if [ -d "$HOME/git/$1" ]
-        then echo "$1 git directory exists, removing"
+    if [ -d "$HOME/git/$1" ]; then
+        echo "$1 git directory exists, removing"
         rm -rfd "$HOME/git/$1"
     fi
 }
@@ -119,7 +120,7 @@ function bgdc {
 |f-"Y\|
 \()7L/
  cgD                             __ _
- |\(        _______________    .'  Y '>,
+ |\(        _______________    .' Y '>,
   \ \     /                 \ / _   _   \
    \\\   | BE GAY DO CRIMES | )(_) (_)(|}
     \\\   \_______________  / {  4A   } /
@@ -145,8 +146,8 @@ if [ -f '/home/cnorling/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cnorling
 if [ -f '/home/cnorling/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cnorling/google-cloud-sdk/completion.zsh.inc'; fi
 
 # perform local only operations
-if [ -f '/home/cnorling/.envrc' ]
-    then . '/home/cnorling/.envrc'
+if [ -f '/home/cnorling/.envrc' ]; then
+    . '/home/cnorling/.envrc'
 fi
 
 bgdc
