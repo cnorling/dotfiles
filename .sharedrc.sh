@@ -114,6 +114,10 @@ function showpath {
     echo "${PATH//:/$'\n'}"
 }
 
+function asl {
+    aws sso login --profile nonprod
+}
+
 function bgdc {
     echo '
 ,-\__\
