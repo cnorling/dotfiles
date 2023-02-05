@@ -150,8 +150,8 @@ if [ -f '/home/cnorling/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cnorling
 if [ -f '/home/cnorling/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cnorling/google-cloud-sdk/completion.zsh.inc'; fi
 
 # perform local only operations
-if [ -f '/home/cnorling/.envrc' ]; then
-    . '/home/cnorling/.envrc'
+if [ -f '/home/cnorling/.envrc.sh' ]; then
+    . '/home/cnorling/.envrc.sh'
 fi
 
 bgdc
