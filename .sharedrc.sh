@@ -72,29 +72,39 @@ done
 # this function is used to open vscode in windows from linux.
 # it also creates workspaces and initializes github repos how I like them.
 function maintain {
-    # check if there's a valid vscode workspace
-    if ! [ -f "$HOME/git/$1.code-workspace" ]; then
-        echo "$1.code-workspace is missing, replacing"
-        A='{"folders": [{"path": "'
-        B="$HOME/git/$1"
-        C='"}]}'
-        echo $A$B$C | jq >"$HOME/git/$1.code-workspace"
+    # check if the input is a repo name
+    if ! [[ $1 =~ ^git@github\.com:(.)*\.git$ ]]; then
+        echo "input is not a git repo, acting as if its a pre-existing workspace"
+        repo="$1"
     fi
-    # check if repo already exists
-    if ! [ -d "$HOME/git/$1/.git" ]; then
-        echo "$1 git repo is missing, checking if there's a valid url"
-        if [[ $2 =~ ^git@github\.com:(.)*\.git$ ]]; then
-            echo "url is valid, cloning repo"
-            git clone $2 "$HOME/git/$1"
+
+    # check if the input is a repo clone url
+    if [[ $1 =~ ^git@github\.com:(.)*\.git$ ]]; then
+        repo=$(echo $1 | sed -r 's/(.*\/)|(\.git)//g')
+        echo "input is a git repo url, testing if $repo is a valid workspace"
+
+        # check if the vscode workspace is already created
+        if ! [ -f "$HOME/git/$repo.code-workspace" ]; then
+            echo "$repo.code-workspace is missing, replacing"
+            A='{"folders": [{"path": "'
+            B="$HOME/git/$repo"
+            C='"}]}'
+            echo $A$B$C | jq >"$HOME/git/$repo.code-workspace"
+        fi
+
+        # check if the repo is already cloned down
+        if ! [ -d "$HOME/git/$repo/.git" ]; then
+            echo "$repo git repo is missing, checking if there's a valid url"
+            git clone $1 "$HOME/git/$repo"
         fi
     fi
     # open the repo
-    code "$HOME/git/$1.code-workspace"
+    code "$HOME/git/$repo.code-workspace"
 }
 
 # this function just lists repos I have cloned down
 function maintains {
-    ls -d ~/git/*/ | sed 's/\/home\/cnorling\/git\///g' | sed 's/\///g'
+    ls -d ~/git/*/ | sed -r 's/(\/home\/cnorling\/git\/)|(\/)//g'
 }
 
 # this function removes repos I've cloned down and initialized
