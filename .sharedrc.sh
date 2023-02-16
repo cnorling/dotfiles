@@ -74,7 +74,6 @@ done
 function maintain {
     # check if the input is a repo name
     if ! [[ $1 =~ ^git@github\.com:(.)*\.git$ ]]; then
-        echo "input is not a git repo, acting as if its a pre-existing workspace"
         repo="$1"
     fi
 
