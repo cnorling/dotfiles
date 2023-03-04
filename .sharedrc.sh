@@ -47,6 +47,9 @@ alias tfversion='tfenv'
 alias tfver='tfenv'
 alias tfv='tfenv'
 
+# aws aliases
+alias asl='aws sso login'
+
 # add a symlink to zshrc, bashrc, and bash_aliases
 dotfiles=(
     .bashrc
@@ -123,8 +126,15 @@ function showpath {
     echo "${PATH//:/$'\n'}"
 }
 
-function asl {
-    aws sso login --profile nonprod
+# this function generates n number of random garbage commits for git testing purposes
+function spoof-commit {
+    for (( i=1 ; i<=$1 ; i=$i+1 )); do
+        message=$(echo $RANDOM | md5sum | head -c 10)
+        echo $RANDOM  >/dev/null # for some reason removing this causes the script to only create one commit
+        echo $message > $message
+        git add $message
+        git commit -m "$message"
+    done
 }
 
 function bgdc {
