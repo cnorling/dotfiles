@@ -37,6 +37,7 @@ brewinstallers=(
     helm
     gitversion
     pulumi
+    node
 )
 for installer in ${brewinstallers[@]}
 do
