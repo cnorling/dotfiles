@@ -36,6 +36,7 @@ brewinstallers=(
     kubectl
     helm
     gitversion
+    pulumi
 )
 for installer in ${brewinstallers[@]}
 do
