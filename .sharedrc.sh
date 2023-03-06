@@ -137,6 +137,12 @@ function spoof-commit {
     done
 }
 
+# this function just pulls a file from my windows machine to my current directory from the downloads folder
+# I got sick of typing out the full path
+function suck {
+    cp /mnt/c/Users/Selin/Dropbox/Downloads/$1 ./
+}
+
 function bgdc {
     echo '
 ,-\__\
