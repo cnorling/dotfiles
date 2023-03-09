@@ -67,6 +67,7 @@ done
 additionalPaths=(
     /usr/local/texlive/2022/bin/x86_64-linux
     /home/linuxbrew/.linuxbrew/bin
+    /home/cnorling/go/bin
 )
 for additionalPath in ${additionalPaths[@]}; do
     export PATH="$PATH:$additionalPath"
