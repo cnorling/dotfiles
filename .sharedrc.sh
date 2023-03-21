@@ -22,6 +22,7 @@ alias ggl='git log --oneline'
 # add a few other alises
 alias nsl='dig'
 alias k='kubectl'
+alias kc='kubectl config'
 alias p='pulumi'
 alias cls='clear'
 alias weather='curl http://v2.wttr.in/slc'
