@@ -2,7 +2,7 @@
 #PERSONAL STUFF GOES HERE
 #------------------------
 
-# add git aliases
+# git aliases
 alias ggs='git status'
 alias ggf='git fetch'
 alias ggb='git branch'
@@ -19,38 +19,36 @@ alias ggpf='git push --force-with-lease'
 alias ggpom='git pull origin master'
 alias ggl='git log --oneline'
 
-# add a few other alises
-alias nsl='dig'
+# kubernetes and container aliases
 alias k='kubectl'
 alias kc='kubectl config'
-alias p='pulumi'
-alias cls='clear'
-alias weather='curl http://v2.wttr.in/slc'
-
-# docker alises
 alias docker='podman'
 alias dicker='podman'
 alias digger='podman'
 alias dogger='podman'
 alias cuddle='kubectl'
-alias tf='terraform'
-
-# bind clip to windows in wsl
-alias clip='clip.exe'
-
-# set ls to single line by default
-alias ls='ls --color=auto -1'
-
-# set kube editor to vscode
 export KUBE_EDITOR="code -w"
 
-# alias tfenv
+# cloud environment aliases
+alias p='pulumi'
+alias tf='terraform'
 alias tfversion='tfenv'
 alias tfver='tfenv'
 alias tfv='tfenv'
-
-# aws aliases
 alias asl='aws sso login'
+alias gc='gcloud'
+
+# common command aliases
+alias nsl='dig'
+alias cls='clear'
+alias weather='curl http://v2.wttr.in/slc'              # get the weather
+alias clip='clip.exe'                                   # bind clip to windows in wsl
+alias ls='ls --color=auto -1'                           # set ls to single line by default
+
+# ide aliases
+alias Install-Package='dotnet add package'
+alias install-package='dotnet add package'
+alias ip='install-package'
 
 # add a symlink to zshrc, bashrc, and bash_aliases
 dotfiles=(
@@ -146,6 +144,7 @@ function suck {
     cp /mnt/c/Users/Selin/Dropbox/Downloads/$1 ./
 }
 
+# this function prints when my terminal is completely loaded
 function bgdc {
     echo '
 ,-\__\
