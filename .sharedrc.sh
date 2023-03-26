@@ -28,13 +28,14 @@ alias cls='clear'
 alias weather='curl http://v2.wttr.in/slc'
 
 # docker alises
-alias dicker='docker'
-alias digger='docker'
-alias dogger='docker'
+alias docker='podman'
+alias dicker='podman'
+alias digger='podman'
+alias dogger='podman'
 alias cuddle='kubectl'
 alias tf='terraform'
 
-# bind clip to widnows in wsl
+# bind clip to windows in wsl
 alias clip='clip.exe'
 
 # set ls to single line by default
