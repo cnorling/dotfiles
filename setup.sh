@@ -26,6 +26,7 @@ export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
 brewinstallers=(
     jq
+    yq
     zsh
     tfenv
     terraform-docs
