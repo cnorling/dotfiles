@@ -39,6 +39,7 @@ brewinstallers=(
     gitversion
     pulumi
     node
+    azure-cli
 )
 for installer in ${brewinstallers[@]}
 do
