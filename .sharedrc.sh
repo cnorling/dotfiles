@@ -167,11 +167,11 @@ function kustomize-init {
     mkdir $1
     mkdir -p $1/base
     mkdir -p $1/overlays
-    kustomize-printbase $1 | yq > $1/base/kustomization.yaml
+    kustomize-printbase $1 | yq > $1/base/kustomization.yml
     overlays=(`echo $2`)
     for overlay in $overlays; do
         mkdir -p $1/overlays/$overlay
-        kustomize-printoverlay $overlay > $1/overlays/$overlay/kustomization.yaml
+        kustomize-printoverlay $overlay > $1/overlays/$overlay/kustomization.yml
     done
 }
 
