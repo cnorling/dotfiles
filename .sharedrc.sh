@@ -166,12 +166,13 @@ resources:
 function kustomize-init {
     mkdir $1
     mkdir -p $1/base
-    kustomize-printbase $1 | yq > $1/base/kustomization.yaml
     mkdir -p $1/overlays
-    mkdir -p $1/overlays/homelab
-    mkdir -p $1/overlays/cloudlab
-    kustomize-printoverlay homelab > $1/overlays/homelab/kustomization.yaml
-    kustomize-printoverlay cloudlab > $1/overlays/cloudlab/kustomization.yaml
+    kustomize-printbase $1 | yq > $1/base/kustomization.yaml
+    overlays=(`echo $2`)
+    for overlay in $overlays; do
+        mkdir -p $1/overlays/$overlay
+        kustomize-printoverlay $overlay > $1/overlays/$overlay/kustomization.yaml
+    done
 }
 
 # this function prints when my terminal is completely loaded
