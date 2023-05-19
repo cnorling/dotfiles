@@ -96,4 +96,4 @@ if ! [ -f ~/.sharedrc.sh ]
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/salineselin/dotfiles/master/.sharedrc.sh)"
 fi
 
-echo "profile is all setup, just run chsh"
+echo "profile is all setup, just run chsh -s zsh"
