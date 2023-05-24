@@ -48,7 +48,7 @@ alias ls='ls --color=auto -1'                           # set ls to single line 
 # ide aliases
 alias Install-Package='dotnet add package'
 alias install-package='dotnet add package'
-alias ip='install-package'
+# alias ip='install-package' mistake
 
 # add a symlink to zshrc, bashrc, and bash_aliases
 dotfiles=(
@@ -174,6 +174,24 @@ function kustomize-init {
         kustomize-printoverlay $overlay > $1/overlays/$overlay/kustomization.yml
     done
 }
+
+function idempotent-ssh-agent {
+        local timeout=${1:-10m}
+        local ssh_agent_source_file=${2:-/home/$USER/.ssh/agent.sourceme}
+        local pid=$(pgrep -u $USER '^ssh-agent')
+        if [[ -z $pid ]]; then
+                ssh-agent -t $timeout > "$ssh_agent_source_file"
+        fi
+        source "$ssh_agent_source_file"
+}
+
+# add this to .envrc.sh
+# function addkeys {
+#   idempotent-ssh-agent "$@"
+#   ssh-add \
+#     ~/.ssh/id_ed25519_default \
+#     ~/.ssh/id_ed25519_gitlab
+# }
 
 # this function prints when my terminal is completely loaded
 function bgdc {
