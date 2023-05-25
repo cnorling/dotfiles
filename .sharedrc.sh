@@ -44,6 +44,7 @@ alias cls='clear'
 alias weather='curl http://v2.wttr.in/slc'              # get the weather
 alias clip='clip.exe'                                   # bind clip to windows in wsl
 alias ls='ls --color=auto -1'                           # set ls to single line by default
+alias t='tmux'
 
 # ide aliases
 alias Install-Package='dotnet add package'
