@@ -177,13 +177,13 @@ function kustomize-init {
 }
 
 function idempotent-ssh-agent {
-        local timeout=${1:-10m}
-        local ssh_agent_source_file=${2:-/home/$USER/.ssh/agent.sourceme}
-        local pid=$(pgrep -u $USER '^ssh-agent')
-        if [[ -z $pid ]]; then
-                ssh-agent -t $timeout > "$ssh_agent_source_file"
-        fi
-        source "$ssh_agent_source_file"
+    local timeout=${1:-10m}
+    local ssh_agent_source_file=${2:-/home/$USER/.ssh/agent.sourceme}
+    local pid=$(pgrep -u $USER '^ssh-agent')
+    if [[ -z $pid ]]; then
+        ssh-agent -t $timeout > "$ssh_agent_source_file"
+    fi
+    source "$ssh_agent_source_file"
 }
 
 # add this to .envrc.sh
