@@ -31,16 +31,11 @@ brewinstallers=(
     tfenv
     terraform-docs
     lefthook
-    neovim
-    google-cloud-sdk
-    doctl
     kubectl
     helm
     gitversion
-    pulumi
-    node
-    azure-cli
 )
+
 for installer in ${brewinstallers[@]}
 do
     # check if binary exists and install if its missing
