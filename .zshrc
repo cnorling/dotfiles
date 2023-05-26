@@ -128,19 +128,5 @@ bindkey '^I^I' autosuggest-accept
 # enables vim mode
 bindkey -v
 
-# start ssh agent
-eval `ssh-agent -s` > /dev/null
-ssh-add -q ~/.ssh/id_ed25519
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/cnorling/.gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cnorling/.gcloud/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/cnorling/.gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cnorling/.gcloud/google-cloud-sdk/completion.zsh.inc'; fi
-
 # start minikube
 # minikube start --driver=podman --container-runtime=cri-o
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
