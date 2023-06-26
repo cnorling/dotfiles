@@ -229,7 +229,7 @@ if [ -f '/home/cnorling/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cn
 
 # perform local only operations
 if [ -f "$HOME/.envrc.sh" ]; then
-    . '~/.envrc.sh'
+    . "$HOME/.envrc.sh"
 fi
 
 bgdc
