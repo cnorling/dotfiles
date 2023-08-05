@@ -17,7 +17,7 @@ alias ggp='git push'
 alias ggpl='git pull'
 alias ggpf='git push --force-with-lease'
 alias ggpom='git pull origin master'
-alias ggl='git log --oneline'
+alias ggl='git log --oneline --graph'
 
 # kubernetes and container aliases
 alias k='kubectl'
